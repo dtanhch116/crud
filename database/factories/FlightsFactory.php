@@ -1,0 +1,28 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Flights>
+ */
+class FlightsFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'Aircraft_ID' => fake()->randomNumber(5),
+            'Departure_Airport' => fake()->name,
+            'Arrival_Airport' => fake()->name,
+            'Departure_Time' => fake()->date(),
+            'Arrival_Time' => fake()->date(),
+            'Flight_Duration' => fake()->time(),
+        ];
+    }
+}
